@@ -1,0 +1,16 @@
+PKGBUILDS
+=============
+
+
+This repository exists simply to keep a version history of some of [the AUR packages I maintain](https://aur.archlinux.org/packages/?SeB=m&K=chimeracoder). At the moment not all PKGBUILD files are versioned in this repository; the Perl packages tend to be the most frequently updated.
+
+
+
+
+Submissions
+-----------------
+
+If any packages are out of date, feel free to submit a patch via `git format-patch --cover-letter -M origin/master` or  a pull request, and I'll submit the updated PKGBUILD to the AUR as soon as possibe.
+
+
+
