@@ -1,0 +1,50 @@
+# Contributor: chimeracoder <dev@chimeracoder.net>
+# Generator  : CPANPLUS::Dist::Arch 1.19
+# PKGBUILD Version history: https://github.com/ChimeraCoder/PKGBUILDS
+
+pkgname='perl-cpan-meta'
+pkgver='2.120921'
+pkgrel='2'
+pkgdesc="the distribution metadata for a CPAN dist"
+arch=('any')
+license=('PerlArtistic' 'GPL')
+options=('!emptydirs')
+depends=('perl' 'perl-cpan-meta-requirements' 'perl-parse-cpan-meta>=1.4403')
+makedepends=()
+url='http://search.cpan.org/dist/CPAN-Meta'
+source=('http://search.cpan.org/CPAN/authors/id/D/DA/DAGOLDEN/CPAN-Meta-2.120921.tar.gz')
+md5sums=('83d00ee341ca2a6d8d5e5f9d4bd9d41e')
+sha512sums=('0a20ce69515c7f52656bd6d9354ea16419cd2b7cd604ebbd5b07518ff08766d0173b23f6ea6b7a4532d0dbde8f51312d869636a41f12bd743ec96362f5725a55')
+_distdir="${srcdir}/CPAN-Meta-2.120921"
+
+build() {
+  ( export PERL_MM_USE_DEFAULT=1 PERL5LIB=""                 \
+      PERL_AUTOINSTALL=--skipdeps                            \
+      PERL_MM_OPT="INSTALLDIRS=vendor DESTDIR='$pkgdir'"     \
+      PERL_MB_OPT="--installdirs vendor --destdir '$pkgdir'" \
+      MODULEBUILDRC=/dev/null
+
+    cd "$_distdir"
+    /usr/bin/perl Makefile.PL
+    make
+  )
+}
+
+check() {
+  cd "$_distdir"
+  ( export PERL_MM_USE_DEFAULT=1 PERL5LIB=""
+    make test
+  )
+}
+
+package() {
+  cd "$_distdir"
+  make install
+  find "$pkgdir" -name .packlist -o -name perllocal.pod -delete
+}
+
+# Local Variables:
+# mode: shell-script
+# sh-basic-offset: 2
+# End:
+# vim:set ts=2 sw=2 et:
