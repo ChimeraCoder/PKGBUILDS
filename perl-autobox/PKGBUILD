@@ -3,7 +3,7 @@
 # PKGBUILD Version history: https://github.com/ChimeraCoder/PKGBUILDS
 
 pkgname='perl-autobox'
-pkgver='2.77'
+pkgver='2.79'
 pkgrel='1'
 pkgdesc="call methods on native types"
 arch=('any')
@@ -13,7 +13,7 @@ depends=('perl-scope-guard>=0.20')
 makedepends=()
 url='http://search.cpan.org/dist/autobox'
 source=("http://search.cpan.org/CPAN/authors/id/C/CH/CHOCOLATE/autobox-${pkgver}.tar.gz")
-md5sums=('c26f258bb1239b772c0ced094cbe75fc')
+md5sums=('4718107ac4359e4300d913cc56b3e14b')
 _distdir="${srcdir}/autobox-${pkgver}"
 
 build() {
@@ -23,6 +23,9 @@ build() {
       PERL_MB_OPT="--installdirs vendor --destdir '$pkgdir'" \
       MODULEBUILDRC=/dev/null
 
+    echo $srcdir
+    echo $_distdir
+    echo $(ls)
     cd "$_distdir"
     /usr/bin/perl Makefile.PL
     make
