@@ -1,0 +1,50 @@
+# Contributor: chimeracoder <dev@chimeracoder.net>
+# Generator  : CPANPLUS::Dist::Arch 1.19
+# PKGBUILD Version history: https://github.com/ChimeraCoder/PKGBUILDS
+
+pkgname='perl-throwable'
+pkgver='.200004'
+pkgrel='1'
+pkgdesc="a role for classes that can be thrown"
+arch=('any')
+license=('PerlArtistic' 'GPL')
+options=('!emptydirs')
+depends=('perl-devel-stacktrace>=1.21' 'perl-moose>=0.87')
+makedepends=()
+url='http://search.cpan.org/dist/Throwable'
+source=('http://search.cpan.org/CPAN/authors/id/R/RJ/RJBS/Throwable-0.200004.tar.gz')
+md5sums=('848b8e661c52b13e2bc4a070ccb452b7')
+sha512sums=('57d6fd9c95cc1a02e397367083226b4b9bc3276cb533caebb2299e24e7d9ec33d948e481f57916c7f64750ec71c2b6f6a30e3a8fe0eb34d743436eaad41e03de')
+_distdir="${srcdir}/Throwable-0.102080"
+
+build() {
+  ( export PERL_MM_USE_DEFAULT=1 PERL5LIB=""                 \
+      PERL_AUTOINSTALL=--skipdeps                            \
+      PERL_MM_OPT="INSTALLDIRS=vendor DESTDIR='$pkgdir'"     \
+      PERL_MB_OPT="--installdirs vendor --destdir '$pkgdir'" \
+      MODULEBUILDRC=/dev/null
+
+    cd "$_distdir"
+    /usr/bin/perl Makefile.PL
+    make
+  )
+}
+
+check() {
+  cd "$_distdir"
+  ( export PERL_MM_USE_DEFAULT=1 PERL5LIB=""
+    make test
+  )
+}
+
+package() {
+  cd "$_distdir"
+  make install
+  find "$pkgdir" -name .packlist -o -name perllocal.pod -delete
+}
+
+# Local Variables:
+# mode: shell-script
+# sh-basic-offset: 2
+# End:
+# vim:set ts=2 sw=2 et:
