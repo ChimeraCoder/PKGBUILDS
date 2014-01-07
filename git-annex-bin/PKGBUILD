@@ -3,7 +3,7 @@
 # Contributor: Thomas Jost <schnouki@schnouki.net>
 
 pkgname=git-annex-bin
-pkgrel=1
+pkgrel=2
 pkgdesc='Precompiled version of git-annex, webapp and assistant included.'
 arch=('i686' 'x86_64')
 url="http://git-annex.branchable.com/"
