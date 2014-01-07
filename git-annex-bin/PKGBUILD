@@ -1,4 +1,5 @@
-# Maintainer: Sairon Istyar <saironiq@gmail.com>
+# Please submit patches to https://github.com/ChimeraCoder/PKGBUILDS/blob/master/git-annex-bin/PKGBUILD
+# Maintainer: <dev@chimeracoder.net>
 # Contributor: Thomas Jost <schnouki@schnouki.net>
 
 pkgname=git-annex-bin

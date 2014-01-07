@@ -1,6 +1,6 @@
 # Contributor: chimeracoder <dev@chimeracoder.net
 pkgname='perl-moosex-types'
-pkgver='0.35'
+pkgver='0.38'
 pkgrel='1'
 pkgdesc="Organise your Moose types in libraries"
 arch=('any')
@@ -9,10 +9,10 @@ options=('!emptydirs')
 depends=('perl-carp-clan>=6.00' 'perl-namespace-clean>=0.19' 'perl-sub-install>=0.924' 'perl-sub-name')
 makedepends=('perl-moose' 'perl-test-fatal' 'perl-test-requires')
 url='http://search.cpan.org/dist/MooseX-Types'
-source=('http://search.cpan.org/CPAN/authors/id/D/DR/DROLSKY/MooseX-Types-0.35.tar.gz')
-md5sums=('dff0152c0f89802fad5badffd3b465ec')
-sha512sums=('a3ad136054ac8f5b17d034e0d1a5319deafca1e932bc0ccc8ea56f6109cee9a24705c6f490fde6d894034227ed7fe8d1919e2a4ccb924c231863585226c6dc87')
-_distdir="${srcdir}/MooseX-Types-0.35"
+source=("http://search.cpan.org/CPAN/authors/id/E/ET/ETHER/MooseX-Types-${pkgver}.tar.gz")
+md5sums=('a8a8686c4a4b44ee0d1a3b4e4c97a4b9')
+sha512sums=('decb5e3602cb290c305ca3f1c7bdec02559750e37ec39c3ab969a7f050b5d45128092408228d36a871937d6307c2e9ef946a4a11a8cba650d4645048a43bb99f')
+_distdir="MooseX-Types-${pkgver}"
 
 build() {
   ( export PERL_MM_USE_DEFAULT=1 PERL5LIB=""                 \
