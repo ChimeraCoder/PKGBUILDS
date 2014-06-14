@@ -3,7 +3,7 @@
 
 pkgname='perl-moose'
 _cpanname=Moose
-pkgver='2.1208'
+pkgver='2.1209'
 pkgrel='1'
 pkgdesc="A postmodern object system for Perl 5"
 arch=(i686 x86_64)
@@ -13,8 +13,8 @@ depends=('perl-class-load>=0.09' 'perl-class-load-xs>=0.01' 'perl-data-optlist>=
 makedepends=('perl-dist-checkconflicts>=0.02' 'perl-test-fatal>=0.001' 'perl-test-requires>=0.05' 'perl-test-without-module')
 url="https://metacpan.org/release/$_cpanname"
 source=("http://cpan.metacpan.org/authors/id/E/ET/ETHER/$_cpanname-$pkgver.tar.gz")
-md5sums=('e8d8d010f1f5a25e8b913ae0b4bd8fea')
-sha512sums=('cf059987e0aa049c6caa9562f3c7abc8caec410efac4c5e5c5290043849dc40427477b2290fb4c8d0d9d18e883ccf85833760088f786699a09d94e4d87277ce4')
+md5sums=('1c2a13d0f89f494d044ec02102300050')
+sha512sums=('2fc97a091de0e86660466b34be38434a0728eb12863a10a716bcb9896105c1654ba48c819d008238cad321cb9217d401134d21e1f1cafb4fa17996dd4aeeb2d5')
 
 build() {
   cd "$srcdir/$_cpanname-${pkgver}"
