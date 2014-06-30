@@ -2,7 +2,7 @@
 # Generator  : CPANPLUS::Dist::Arch 1.12
 
 pkgname='perl-string-rewriteprefix'
-pkgver='0.006'
+pkgver='0.007'
 pkgrel='1'
 pkgdesc="rewrite strings based on a set of known prefixes"
 arch=('any')
@@ -11,11 +11,11 @@ options=('!emptydirs')
 depends=('perl-sub-exporter>=0.972')
 makedepends=('perl-test-simple')
 url='http://search.cpan.org/dist/String-RewritePrefix'
-source=('http://search.cpan.org/CPAN/authors/id/R/RJ/RJBS/String-RewritePrefix-0.006.tar.gz')
-md5sums=('95ab415fe725d2de9dbf35bbeba08962')
+source=("http://search.cpan.org/CPAN/authors/id/R/RJ/RJBS/String-RewritePrefix-${pkgver}.tar.gz")
+md5sums=('7135a69bd8cf74cf17dba857b2372d16')
 
 build() {
-  local PERL=/usr/bin/perl DIST_DIR="${srcdir}/String-RewritePrefix-0.006"
+  local PERL=/usr/bin/perl DIST_DIR="${srcdir}/String-RewritePrefix-${pkgver}"
 
   ( export PERL_MM_USE_DEFAULT=1 PERL5LIB=""                 \
       PERL_AUTOINSTALL=--skipdeps                            \
