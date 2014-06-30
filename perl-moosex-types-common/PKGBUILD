@@ -1,8 +1,7 @@
 # Contributor: chimeracoder <dev@chimeracoder.net>
-# Generator  : CPANPLUS::Dist::Arch 1.19
 
 pkgname='perl-moosex-types-common'
-pkgver='0.001008'
+pkgver='0.001012'
 pkgrel='1'
 pkgdesc="A library of commonly used type constraints"
 arch=('any')
@@ -11,10 +10,9 @@ options=('!emptydirs')
 depends=('perl-moose>=0.39' 'perl-moosex-types>=0.04')
 makedepends=('perl-test-fatal')
 url='http://search.cpan.org/dist/MooseX-Types-Common'
-source=('http://search.cpan.org/CPAN/authors/id/E/ET/ETHER/MooseX-Types-Common-0.001008.tar.gz')
-md5sums=('0346d19397c3a3e83c25d82c23f64549')
-sha512sums=('f1082a8edcf43a6961213e9f23bcc66126fa5a1c4765989e620bcf1d8ab0353d41632c5b44e1133955f34ab215065588f10239eb431e06ad915e30c48d30d8cd')
-_distdir="${srcdir}/MooseX-Types-Common-0.001008"
+source=("http://search.cpan.org/CPAN/authors/id/E/ET/ETHER/MooseX-Types-Common-${pkgver}.tar.gz")
+md5sums=('9acfbf718d46a9ee1d2198d6b59e40fa')
+sha512sums=('af2c3f0081cca298ad3a828ee72143e7a51c4960432f6bcada380585a3ff89855cf6944e65900d36fbdbcc66200cab5fb8b91b4e9403a527715680b4700eebd9')
 
 build() {
   ( export PERL_MM_USE_DEFAULT=1 PERL5LIB=""                 \
@@ -23,6 +21,7 @@ build() {
       PERL_MB_OPT="--installdirs vendor --destdir '$pkgdir'" \
       MODULEBUILDRC=/dev/null
 
+    _distdir="${srcdir}/MooseX-Types-Common-${pkgver}"
     cd "$_distdir"
     /usr/bin/perl Makefile.PL
     make
@@ -30,6 +29,7 @@ build() {
 }
 
 check() {
+  _distdir="${srcdir}/MooseX-Types-Common-${pkgver}"
   cd "$_distdir"
   ( export PERL_MM_USE_DEFAULT=1 PERL5LIB=""
     make test
@@ -37,6 +37,7 @@ check() {
 }
 
 package() {
+  _distdir="${srcdir}/MooseX-Types-Common-${pkgver}"
   cd "$_distdir"
   make install
   find "$pkgdir" -name .packlist -o -name perllocal.pod -delete
